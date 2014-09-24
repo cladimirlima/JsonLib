@@ -35,7 +35,18 @@ RETURN SELF
 METHOD Size() CLASS Map
 RETURN LEN(aEntry)
 
-METHOD HasKey(cKEY) CLASS Map
+
+/*/{Protheus.doc} HasKey
+Busca no array de entrys deste objeto
+se o mesmo possue alguma Entry com a KEY informada
+@author desenvolvimento
+@since 17/09/2014
+@version 1.0
+@param cKEY, character, (Key que deve ser procurada)
+@example
+(examples)
+@see (links_or_references)
+/*/METHOD HasKey(cKEY) CLASS Map
 	Local var := 0
 	
 	for var:= 1 to Len(::aENTRY)
@@ -45,7 +56,17 @@ METHOD HasKey(cKEY) CLASS Map
 	next
 RETURN .F.
 
-METHOD HasValue(uVALUE) CLASS Map
+/*/{Protheus.doc} HasValue
+Busca no array de entrys deste objeto
+se o mesmo possue alguma Entry com o VALUE informado
+@author desenvolvimento
+@since 17/09/2014
+@version 1.0
+@param uVALUE, ${Undefined}, (VALUE que deve ser procurado)
+@example
+(examples)
+@see (links_or_references)
+/*/METHOD HasValue(uVALUE) CLASS Map
 	Local var := 0
 	
 	for var:= 1 to Len(::aENTRY)
@@ -57,7 +78,17 @@ METHOD HasValue(uVALUE) CLASS Map
 	next
 RETURN .F.
 
-METHOD GetIndex(cKEY) CLASS Map
+
+/*/{Protheus.doc} GetIndex
+Retorna a posicao de uma ENTRY pela sua KEY
+@author desenvolvimento
+@since 17/09/2014
+@version 1.0
+@param cKEY, character, (Key que deve ser procurada)
+@example
+(examples)
+@see (links_or_references)
+/*/METHOD GetIndex(cKEY) CLASS Map
 	Local var := 0
 	
 	for var:= 1 to Len(::aENTRY)
@@ -67,7 +98,17 @@ METHOD GetIndex(cKEY) CLASS Map
 	next	
 RETURN 0
 
-METHOD GetEntry(cKEY) CLASS Map
+
+/*/{Protheus.doc} GetEntry
+Retorna o Objeto Entry que possui esta KEY
+@author desenvolvimento
+@since 17/09/2014
+@version 1.0
+@param cKEY, character, (Key que deve ser procurada)
+@example
+(examples)
+@see (links_or_references)
+/*/METHOD GetEntry(cKEY) CLASS Map
 	Local var := 0
 	local oEntry:= nil
 	
@@ -92,7 +133,17 @@ METHOD PutEntry(oEntry) CLASS Map
 	Endif
 RETURN
 
-METHOD ToJson() CLASS Map
+
+/*/{Protheus.doc} ToJson
+Retorna o valor de Todas as Entrys deste 
+objeto, de acordo com a formatação Json
+@author desenvolvimento
+@since 17/09/2014
+@version 1.0
+@example
+(examples)
+@see (links_or_references)
+/*/METHOD ToJson() CLASS Map
 	Local cJson := "{"
 	Local var := 0
 	Local oEntry

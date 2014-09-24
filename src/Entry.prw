@@ -12,7 +12,17 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.*/
 #include "Protheus.ch"
-CLASS Entry
+
+
+/*/{Protheus.doc} Entry
+Conceito de ‘entrada’ para mapeamento de chave/Valor.
+@author desenvolvimento
+@since 17/09/2014
+@version 1.0
+@example
+(examples)
+@see (links_or_references)
+/*/CLASS Entry
 	DATA KEY
 	DATA VALUE
 	
@@ -24,7 +34,17 @@ CLASS Entry
 	METHOD ToJson()
 ENDCLASS
 
-METHOD New(_KEY,_VALUE) CLASS Entry
+/*/{Protheus.doc} New
+Cria uma nova instância de Entry
+@author desenvolvimento
+@since 17/09/2014
+@version 1.0
+@param _KEY, ${Caracter}, (Chave)
+@param _VALUE, ${Undefined}, (valor)
+@example
+oEntry := Entry():New('1','casa')
+@see (links_or_references)
+/*/METHOD New(_KEY,_VALUE) CLASS Entry
 ::KEY = _KEY
 ::VALUE= _VALUE
 RETURN self
@@ -42,7 +62,22 @@ METHOD SetKEY_(_KEY) CLASS Entry
 ::KEY := _KEY
 RETURN
 
-METHOD ToJson() CLASS Entry
+
+/*/{Protheus.doc} ToJson
+Retorna o valor do conteudo do 
+objeto de acordo com a formatação Json
+@author desenvolvimento
+@since 17/09/2014
+@version 1.0
+@example
+oEntry := Entry():New('nome','Cladimir')
+oEntry:ToJson() --> "Nome" : "Cladimir" 
+
+oEntry := Entry():New('valores',{1,5,8,7})
+oEntry:ToJson() --> "valores": [1,5,8,7]
+
+@see (links_or_references)
+/*/METHOD ToJson() CLASS Entry
 	LOCAL cRet
 	LOCAL oObj
 	Local var := 0

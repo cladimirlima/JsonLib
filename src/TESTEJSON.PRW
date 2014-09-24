@@ -656,11 +656,12 @@ next
 
 RETURN
 
+/*/{Protheus.doc} TESTJSA
+Neste exemplo mostro como fazer o parse de um Json e 
+tambem com extrair informações
+http://json.org/example
 
-
-
-//http://json.org/example
-/*{"menu": {
+{"menu": {
     "header": "SVG Viewer",
     "items": [
         {"id": "Open"},
@@ -686,8 +687,15 @@ RETURN
         {"id": "Help"},
         {"id": "About", "label": "About Adobe CVG Viewer..."}
     ]
-}}*/
-USER FUNCTION TESTJSA()
+}}
+@author desenvolvimento
+@since 17/09/2014
+@version 1.0
+@return ${return}, ${return_description}
+@example
+(examples)
+@see (links_or_references)
+/*/USER FUNCTION TESTJSA()
 Local nPos := 0
 Local oJson := JsonObject():New()
 Local aVar := {}
@@ -718,7 +726,7 @@ cJson+= '        null,                                                  '
 cJson+= '        {"id": "Help"},                                        '
 cJson+= '        {"id": "About", "label": "About Adobe CVG Viewer..."}  '
 cJson+= '    ]                                                          '
-cJson+= '}}           
+cJson+= '}}'           
 
 oJson:Parse(cJson)
 MsgAlert(oJson:GetUndef("menu"):GetUndef("header"),"RESULTADO")
