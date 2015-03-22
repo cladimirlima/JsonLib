@@ -132,7 +132,7 @@ oEntry:ToJson() --> "valores": [1,5,8,7]
 			EndIF
 			
 			cRet += ']' 
-		EndIf
+		
 		// Alterado por Jackson em 10/11/2014 
 		// -> Tratamento para TAG com array vazio pois estava gerando excecao na concatenacao do metodo toJson da classe Map.
 		Else
